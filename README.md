@@ -1,23 +1,10 @@
 # Project – User Level Threads
 
 ### Department of Computer Science, SIUE
-
 ### Course Name: Operating System
-
 ### Instructor: Dr. Igor Crk
-
 ### CS514 Spring ’
 
-### Prashanna Raj Pandit*
-
-### 800817018
-
-### March 1, 2025
-
-*ppandit@siue.edu
-
-
-## Contents
 
 
 ## 1 Introduction
@@ -63,9 +50,9 @@ Scheduling paper.
 As we all know, the execution starts from main(). The user gets prompt to select the How they
 want to create threads and which scheduler they want to choose. It looks something like this.
 
-```
-Figure 1: Menu
-```
+<img width="714" alt="Screenshot 2025-02-25 at 4 57 14 PM" src="https://github.com/user-attachments/assets/f67f617d-58ac-4293-8241-0aacca834bc4" />
+
+
 Selectingoption 1runs the Round Robin scheduler by creating 4 threads. This meets the
 objective 1 and 2. here two threads execute before virtual alarm rings and yields another thread to
 proceeds and two threads needs preemption by the scheduler.
@@ -96,9 +83,6 @@ context is modified bymakecontext()to setup thread execution. so that when threa
 it starts execution at func (threadfunction).
 
 
-```
-Figure 2: Thread creation
-```
 ### 2.2 Timer and Preemption
 
 After creating threads and pushing into the ready queue, the setTimer() function is called which sets
@@ -114,9 +98,9 @@ schedulerHandler()is called explicitely from main to start the execution of firs
 To stop the program, the user is asked to enter the stopping time in seconds. Eg.( 8, 16, 24, 32,
 40, 48, 56, 64, 72, 80......... ..200)
 
-```
-Figure 3: A prompt that asks the user for a stop time
-```
+<img width="464" alt="Screenshot 2025-02-25 at 4 57 34 PM" src="https://github.com/user-attachments/assets/0921aaf6-e302-4970-a35e-5bcca147e6b5" />
+
+
 This is the total CPU time consumed by the process. This is implemented by setting the timer
 ITIMERPROF, which calculates the total CPU time. And register the stopExecution() function
 to handle theSIGPROFsignal after the expiration of timer. The stopExecution() function end the
@@ -203,9 +187,11 @@ Experimanet of fairness.
 
 - The gap between Thread 1 and Thread 2 increases proportionally over time, confirming the
     probabilistic fairness of the lottery approach.
+<img width="868" alt="Screenshot 2025-02-25 at 4 57 53 PM" src="https://github.com/user-attachments/assets/0afb5f9d-9aa5-40e4-a302-efa10e5e52c9" />
 
 Figure 4: The plot shows the cumulative number of iterations completed by each thread over time
 under lottery scheduling.
+<img width="852" alt="Screenshot 2025-02-25 at 4 58 09 PM" src="https://github.com/user-attachments/assets/a424bb3e-3b22-4608-b80d-9452a267f252" />
 
 Figure 5: The ratio of iterations completed by Thread 2 relative to Thread 1 over time. (Ideal vs
 Observed)
@@ -214,6 +200,7 @@ Observed)
 Observation 2: The ideal fairness ratio, given the 1:2 ticket allocation, is 2.0, represented by
 the red dashed line. Figure 5 shows that the fairness approaches to the ideal when the process is
 executed for a longer time by decreasing randmness.
+<img width="845" alt="Screenshot 2025-02-25 at 4 58 20 PM" src="https://github.com/user-attachments/assets/b18f29ed-06c5-431f-a85e-8a8fc2820874" />
 
 Figure 6: Thread Progress over time. The number of iteration per second executed by two threads
 in 1:2 ticket allocation oer 200 seconds
@@ -250,9 +237,12 @@ Observation: From the plot of Figure 7 and 8 we can see that the number of times
 execute depends on their tickets allocations. The more thickets a threads have more it get chance
 to execute. This observations also proves the fairness in lottery scheduling
 
+<img width="836" alt="Screenshot 2025-02-25 at 4 58 31 PM" src="https://github.com/user-attachments/assets/ea518428-f3da-4346-8de4-c1f14c744578" />
+
 Figure 7: Relative Rate Accuracy. For each allocated ratio, the observed ratio is plotted for each
 of three 60 second runs. The red line indicate the ideal where the two ratios are identical
 
+<img width="860" alt="Screenshot 2025-02-25 at 4 58 42 PM" src="https://github.com/user-attachments/assets/1c150b64-c3fb-4096-a837-89ce32edc311" />
 
 Figure 8: This figure shows both the threads execute 15000 iterations when 1:1 tickets and then the
 rate at which higher allocated threads increases, with the same rate the the lower allocated thread
@@ -262,6 +252,9 @@ decreases.
 
 Two threads were executed by using round robin scheduler and the 25 sample data was collected
 with the interval of 8 seconds. The data is shown below in Table 3.
+
+
+Table 3: The number of iteration executed by threads with different time interval (RR)
 
 Round Robin:In the Round Robin scheduler, each thread is given an equal time slice (quan-
 tum) to execute, regardless of its priority or workload. This ensures that all threads get CPU time
@@ -274,52 +267,10 @@ threads with higher ticket counts received more CPU time, demonstrating weighted
 allows the scheduler to prioritize certain threads while still giving lower-ticket threads a chance to
 execute.
 
+<img width="840" alt="Screenshot 2025-02-25 at 4 58 52 PM" src="https://github.com/user-attachments/assets/67c7fbbd-e5c5-4484-abd4-f0ac7e337f51" />
+
 
 ## Time (sec) Thread 1 Iterations Thread 2 Iterations
-
-Table 3: The number of iteration executed by threads with different time interval (RR)
-
-- 1 Introduction
-   - 1.1 Overview of Project and User Level Thread
-   - 1.2 Objective
-- 2 Scheduling Algorithm Implementations
-   - 2.1 Thread creation
-   - 2.2 Timer and Preemption
-   - 2.3 Round robin scheduler
-   - 2.4 Lottery scheduler
-- 3 Experiment
-   - 3.1 Waldspurger Experiment 5.1 (Fairness)
-      - 3.1.1 Threads with same ticket allocation ratio (1:2)
-      - 3.1.2 Threads with different ticket allocation ratio
-   - 3.2 Round robin vs Lottery scheduling
-- 4 Conclusion
-- 5 Appendix
-- 6 Reference
-      -
-   -
-   -
-   -
-   -
-   -
-   -
-   -
-   -
-   -
-   -
-   -
--
--
--
--
--
--
--
--
--
--
--
--
--
 
 
 ## 4 Conclusion
