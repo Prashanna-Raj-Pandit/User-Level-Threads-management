@@ -3,7 +3,7 @@
 ### Department of Computer Science, SIUE
 ### Course Name: Operating System
 ### Instructor: Dr. Igor Crk
-### CS514 Spring ’
+### CS514 Spring ’25
 
 
 
@@ -21,9 +21,6 @@ The project consists of three files:
 - uthreads.h-Contains the blueprint for the thread structure.
 - uthreads.c-Implements both the Round Robin scheduler and the Lottery Scheduler.
 - Makefile-to make executable of files
-
-The graphs generated in this project are created using Matplotlib in Python. Here is the link to
-the GitHub repository:LINK
 
 The project uses a custom setTimer() function, which generates signals to the scheduler handler
 when the timer triggers. Its implementation is explained in detail in section 2. Two types of threads
