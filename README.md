@@ -1,6 +1,6 @@
-## 1 Introduction
+# 1 Introduction
 
-### 1.1 Overview of Project and User Level Thread
+## 1.1 Overview of Project and User Level Thread
 
 This project implements user-level many-to-one threads without using thepthreadslibrary, as per
 the requirements. Since, in user-level threads, the kernel is unaware of the user threads, we need
