@@ -1,12 +1,3 @@
-# Project – User Level Threads
-
-### Department of Computer Science, SIUE
-### Course Name: Operating System
-### Instructor: Dr. Igor Crk
-### CS514 Spring ’25
-
-
-
 ## 1 Introduction
 
 ### 1.1 Overview of Project and User Level Thread
